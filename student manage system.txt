@@ -1,0 +1,27 @@
+ create table batch(
+     bid int primary key,
+     name varchar(20) not null,
+     seat int not null
+     );
+
+
+create table student_batch(
+     roll int,
+   cid int,
+     foreign key (roll) references student(roll),
+    foreign key (cid) references course(cid)
+    );
+create table course(
+    cid int primary key auto_increment,
+    cname varchar(20) not null,
+    fee int not null,
+    bid int);
+
+
+    create table student(
+    roll int primary key auto_increment,
+    name varchar(20) not null,
+    marks int not null,
+    email varchar(30) not null,
+    password varchar(20) not null
+    );
